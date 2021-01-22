@@ -1,4 +1,4 @@
-class Main {  
+public class Main {  
   public static void main(String args[]) { 
       int i, j;
       String a = "*"; 
@@ -12,4 +12,65 @@ class Main {
           }
       }
   } 
+}
+
+
+
+
+--------------------------------------------------CALCULATOR PROGRAM----------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class MainApplication 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner myObj = new Scanner(System.in);
+		
+		System.out.print("Enter first number: ");
+		int num1 = myObj.nextInt();
+		
+		System.out.print("Enter second number: ");
+		int num2 = myObj.nextInt();
+		
+		System.out.print("Enter + to add, - to substract, / to divide, * to multiply: ");
+		char operation = myObj.next().charAt(0);
+		
+		if(operation == '+') 
+		{
+		int sum = num1 + num2;
+		System.out.println("The sum is: "+sum);
+		}
+		
+		else if(operation == '-') 
+		{
+		int subtraction = num1 - num2;
+		System.out.println("The subtraction is: "+subtraction);
+		}
+		
+		else if(operation == '/' && num1 > num2) 
+		{
+		int divison = num1 / num2;
+		System.out.println("The divison is: "+divison);
+		}
+		
+		else if(operation == '/' && num1 < num2) 
+		{
+		System.out.println("The divison is not possible!");
+		}
+		
+		else if(operation == '*') 
+		{
+		int multiplication = num1 * num2;
+		System.out.println("The multiplication is: "+multiplication);
+		}
+		
+		else
+		{
+			System.out.println("Wrong choice please Try Again!");
+		}
+
+	}
 }
