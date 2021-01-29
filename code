@@ -74,3 +74,125 @@ public class MainApplication
 
 	}
 }
+
+
+
+
+//--------------------------------------------------------------Calculator using functions------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class Calculator
+{
+	public static int add(int a, int b)
+	{
+		return a + b;
+	}
+	public static int sub(int a, int b)
+	{
+		return a - b;
+	}
+	public static int mult(int a, int b)
+	{
+		return a * b;
+	}
+	public static int div(int a, int b)
+	{
+		return a / b;
+	}
+}
+
+public class CalculatorApplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sum = 0, sub = 0, mul = 0, div = 0;
+		int x, y;
+		String input = null;
+		Scanner scan;
+		scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Building static operations on class calculatore");
+		System.out.println("and using static operations of class calculator in main method");
+		System.out.println("Enter the first number : ");
+		input = scan.nextLine();
+		x = Integer.parseInt(input);
+		System.out.println("Enter the second number : ");
+		input = scan.nextLine();
+		y = Integer.parseInt(input);
+		
+		sum  = Calculator.add(x, y);
+		sub = Calculator.sub(x, y);
+		mul = Calculator.mult(x, y);
+		div = Calculator.div(x, y);
+		System.out.println("Sum: " + sum);
+		System.out.println("Sub: " + sub);
+		System.out.println("Mult: " + mul);
+		System.out.println("Division: " + div);
+		
+		
+	}
+
+}
+
+
+---------------------------------------------------------------Similar-----------------------------------------------------------------
+import java.util.Scanner;
+
+public class CalculatorApplication2 {
+
+	public static int add(int a, int b)
+	{
+		return a + b;
+	}
+	
+	public static int sub(int a, int b)
+	{
+		return a - b;
+	}
+	
+	public static int mult(int a, int b)
+	{
+		return a * b;
+	}
+	
+	public static int div(int a, int b)
+	{
+		return a / b;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		int x, y;
+		
+		int sum = 0, sub = 0, mult = 0, div = 0;
+		String input = null;
+		Scanner scan;
+		scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter the first number : ");
+		input = scan.nextLine();
+		x = Integer.parseInt(input);
+		System.out.print("Enter the second number : ");
+		input = scan.nextLine();
+		y = Integer.parseInt(input);
+		
+		sum = add(x,y);
+		sub = sub(x,y);
+		mult = mult(x,y);
+		div = div(x,y);
+		
+		System.out.println("Sum = " + sum);
+		System.out.println("Sub = " + sub);
+		System.out.println("Mul = " + mult);
+		System.out.println("Div = " + div);
+		
+		scan.close();
+	}
+
+}
+
