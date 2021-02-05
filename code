@@ -196,3 +196,129 @@ public class CalculatorApplication2 {
 
 }
 
+
+
+
+
+---------------------------------------------------------------------------Version 4 Calculator---------------------------------------------------------------------------------
+
+
+package client;
+
+import java.text.DecimalFormat;
+
+class Calculator
+{
+	//attribute
+	private double operand1;
+	private double operand2;
+	
+	//operations
+	public Calculator()
+	{
+		this.operand1 = 0;
+		this.operand2 = 1;
+	}
+	
+	public Calculator(double operand1, double operand2)
+	{
+		this.operand1 = operand1;
+		this.operand2 = operand2;
+	}
+	
+	public void setOperand1(double operand1)
+	{
+		this.operand1 = operand1;
+	}
+	public double getOperand1()
+	{
+		return this.operand1;
+	}
+	
+	public void setOperand2(double operand2)
+	{
+		this.operand2 = operand2;
+	}
+	public double getOperand2()
+	{
+		return this.operand2;
+	}
+	
+	
+	public double Add()
+	{
+		return this.operand1 + this.operand2;
+	}
+	
+	public double Sub()
+	{
+		return this.operand1 - this.operand2;
+	}
+	public double Mul()
+	{
+		return this.operand1 * this.operand2;
+	}
+	public double Div()
+	{
+		if (this.operand2 !=0)
+		{
+		return this.operand1 / this.operand2;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	public String toString()
+	{
+		String state = "Calculator : [operand1 = "+this.operand1 + ", operand2 ="
+		+ this.operand2 +"]" ;
+		
+		//String state = "Calculator : [operand1 = "+this.operand1 + ", operand2 ="+ this.operand2 + " SUM = "+ Add()+ "]" ;
+		return state;
+	}
+	
+}
+
+
+
+
+//Main class
+public class MainCalculator {
+
+	public static void main(String[] args) {
+		double sum, sub, div, mul;
+		
+		DecimalFormat decFormat;
+		decFormat = new DecimalFormat("0.0");
+		
+		Calculator c1 = new Calculator();
+		//Calculator c2 = new Calculator(22,5);
+		Calculator c2 = new Calculator(22.222,555.123);
+		
+		//sum = c1.getOperand1() + c1.getOperand2();
+		
+		sub = c1.getOperand1() - c1.getOperand2();
+		
+		mul = c1.getOperand1() * c1.getOperand2();
+		
+		div =  c1.getOperand1() / c1.getOperand2();
+		
+		//System.out.prdoubleln("The sum is :"+ c1.getOperand1() + c1.getOperand2());
+		//System.out.println("The sum is :"+ c1.Add());
+		System.out.println("The sum is :"+ decFormat.format (c1.Add())); //1
+		
+		sum = c2.Add();
+		System.out.println("The second sum is :"+ sum);
+		System.out.println("The sub is :"+ sub);
+		System.out.println("The mul is :"+ mul);
+		System.out.println("The div is :"+ div);
+		
+		System.out.println("The object c1 is :"+ c1);//27
+		System.out.println("The object c2 is :"+ c2);//27
+		System.out.println("The sum is :"+ decFormat.format (c2.Add()));//27
+	}
+
+}
+
